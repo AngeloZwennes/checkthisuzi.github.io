@@ -1,0 +1,19 @@
+<form>
+    <div class="form-group">
+        <label>Product name:</label>
+        <input type="text" class="form-control" placeholder="Enter product name" ng-model="product.name">
+    </div>
+    <div class="form-group">
+        <label>Product description</label>
+        <textarea class="form-control" rows="3" placeholder="Enter product description" ng-model="product.information"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Product price</label>
+        <input type="number" class="form-control" step="any" placeholder="Enter product price" ng-model="product.price">
+    </div>
+    <div class="form-group">
+        <label>Product image URL</label>
+        <input type="url" class="form-control" placeholder="Enter product image" ng-model="product.image">
+    </div>
+    <button type="submit" ng-click="updateProduct()" class="btn btn-success">Submit</button>
+</form>

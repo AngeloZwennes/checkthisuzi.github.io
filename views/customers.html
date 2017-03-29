@@ -1,0 +1,24 @@
+<h1>Customers</h1>
+    <a href="#/customers/AddCustomer" class="btn btn-primary" style="float: right">Add Customer</a>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>Adress</th>
+        <th>City</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="customer in customers">
+        <td>{{customer.name}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.adress | capitalize}}</td>
+        <td>{{customer.city | capitalize}}</td>
+        <td><button class="btn btn-success" ng-click="editCustomer($index)">Edit</button></td>
+        <td><a ng-click="deleteCustomer($index)" class="btn btn-danger">Delete</a></td>
+    </tr>
+    </tbody>
+</table>

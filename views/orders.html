@@ -1,0 +1,23 @@
+
+<table class="table table-condensed">
+    <thead>
+    <td>Date</td>
+    <td>Subtotal</td>
+    <td>Status</td>
+    </thead>
+
+    <tbody ng-repeat="order in orders" on-finish-render>
+    <tr data-toggle="collapse" data-target="#{{order.id}}">
+        <td>{{order.date}}</td>
+        <td>{{order.subTotal}}</td>
+        <td>{{order.orderStatus}}</td>
+    </tr>
+    <tr>
+        <td class="hiddenRow">
+            <div id="{{order.id}}" class="collapse">
+                <h4>{{order.date}}</h4>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>

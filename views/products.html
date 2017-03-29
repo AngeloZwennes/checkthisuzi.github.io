@@ -1,0 +1,22 @@
+<h1>Products</h1>
+    <a href="#products/AddProduct" class="btn btn-primary" style="float: right">Add Product</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="product in products">
+            <td>{{product.name}}</td>
+            <td>{{product.information}}</td>
+            <td>{{product.price | currency: "€"}}</td>
+            <td><button class="btn btn-success" ng-click="editProduct($index)">Edit</button></td>
+            <td><a ng-click="deleteProduct($index)" class="btn btn-danger">Delete</a></td>
+        </tr>
+    </tbody>
+</table>

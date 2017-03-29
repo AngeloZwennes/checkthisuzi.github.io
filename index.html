@@ -1,0 +1,89 @@
+<html ng-app="angular-store">
+<head>
+    <title>Angular Store</title>
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href="styles/vendor/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <style>
+        body {
+            padding-top: 70px;
+            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+        }
+    </style>
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Angular store</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/#">Home</a>
+                </li>
+                <li>
+                    <a href="#products">Products</a>
+                </li>
+                <li>
+                    <a href="#customers">Customers</a>
+                </li>
+                <li>
+                    <a href="#orders">Orders</a>
+                </li>
+                <li>
+                    <a href="#cart">Shopping cart</a>
+                </li>
+                <li>
+                    <a>Choose Customer:</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<div class="container" ng-view>
+</div>
+
+<script src="/scripts/app.js"></script>
+<!--PLUGINS START-->
+<script src="scripts/vendor/jquery.js"></script>
+<script src="/scripts/vendor/bootstrap.min.js"></script>
+<script src="bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.js"></script>
+<script src="scripts/vendor/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<!--PLUGINS END-->
+<!--CONTROLLERS START-->
+<script src="scripts/controllers/homecontroller.js"></script>
+<script src="scripts/controllers/productcontroller.js"></script>
+<script src="scripts/controllers/customercontroller.js"></script>
+<script src="scripts/controllers/cartcontroller.js"></script>
+<script src="scripts/controllers/managecustomercontroller.js"></script>
+<script src="scripts/controllers/manageproductcontroller.js"></script>
+<script src="scripts/controllers/orderscontroller.js"></script>
+<!--CONTROLLERS END-->
+<!--DIRECTIVES START-->
+<script src="scripts/directives/homepageProducts.js"></script>
+<!--DIRECTIVES END-->
+<!--FACTORIES START-->
+<script src="scripts/factories/cartfactory.js"></script>
+<script src="scripts/factories/productsfactory.js"></script>
+<script src="scripts/factories/customersfactory.js"></script>
+<script src="scripts/factories/ordersfactory.js"></script>
+<!--FACTORIES END-->
+<!--FILTERS START-->
+<script src="scripts/filters/slicedescription.js"></script>
+<script src="scripts/filters/capitalize.js"></script>
+<!--FILTERS END-->
+</body>
+
+</html>
