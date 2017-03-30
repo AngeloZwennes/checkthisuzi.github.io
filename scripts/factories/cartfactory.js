@@ -43,8 +43,12 @@ app.factory('CartFactory',function(){
        localStorage.setItem("cart",JSON.stringify(cart));
 
    }
+   function clearCart(){
+       localStorage.removeItem("cart");
+   }
    return {
        updateCart: updateCart,
+       clearCart: clearCart,
        getCart: getCart,
        addToCart: addToCart,
        getSubTotal: getSubTotal

@@ -1,0 +1,17 @@
+{
+  "name": "angolo",
+  "version": "0.0.1",
+  "description": "ellende",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "karma start",
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server ."
+  },
+  "author": "angolo",
+  "license": "ISC"
+}

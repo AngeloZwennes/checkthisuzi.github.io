@@ -1,0 +1,26 @@
+{
+  "name": "angolo",
+  "description": "kutles",
+  "main": "",
+  "keywords": [
+    "ellende"
+  ],
+  "authors": [
+    "angolo"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-mocks": "^1.6.3",
+    "angular-route": "^1.6.3",
+    "angular-bootstrap-lightbox": "^0.12.0"
+  }
+}

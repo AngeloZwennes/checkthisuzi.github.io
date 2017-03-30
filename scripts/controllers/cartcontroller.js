@@ -1,22 +1,20 @@
-app.controller("CartController", function($scope,CartFactory,OrdersFactory,CustomersFactory) {
+app.controller("CartController", function($scope,CartFactory,OrdersFactory,CustomersFactory,$location,$timeout) {
     $scope.cart = CartFactory.getCart();
     $scope.subTotal = CartFactory.getSubTotal();
     $scope.customers = CustomersFactory.getAllCustomers();
     $scope.customer = CustomersFactory.getCartCustomer();
 
     $scope.chooseCustomer = function () {
-        console.log($scope.customers);
         $("#customer-popup").modal('show');
     };
     $scope.customerChange = function(){
-
+        CustomersFactory.editCustomer($scope.customer);
     };
     $scope.updateCart = function(){
         CartFactory.updateCart($scope.cart);
         $scope.subTotal = CartFactory.getSubTotal();
     };
     $scope.selectCustomer = function(){
-        console.log($scope.customer);
         CustomersFactory.setCartCustomer($scope.customer);
     };
     $scope.placeOrder = function(){
@@ -43,6 +41,13 @@ app.controller("CartController", function($scope,CartFactory,OrdersFactory,Custo
                 "date": today
             }
         ];
-        console.log(newOrder);
+        OrdersFactory.placeOrder(newOrder);
+        $("#customer-popup").modal('hide');
+        CartFactory.clearCart();
+        $timeout($scope.goHome(),1000);
     }
+    $scope.goHome = function(){
+        $location.path("/home");
+    }
+
 });

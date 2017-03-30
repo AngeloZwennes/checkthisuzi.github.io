@@ -68,7 +68,6 @@ app.factory('CustomersFactory',function(){
     }
     function getCartCustomer(){
         var tempCustomer = JSON.parse(localStorage.getItem("cartCustomer"));
-        console.log(tempCustomer);
         return tempCustomer;
     }
     function setCartCustomer(customer){
