@@ -14,8 +14,10 @@ app.controller("ManageProductController",function($scope,$route,ProductsFactory,
          $scope.getProduct();
       } else {
          $scope.addProduct = function(product){
-            ProductsFactory.addProduct(product);
-            $location.path("/products");
+            if(!product == null){
+               ProductsFactory.addProduct(product);
+               $location.path("/products");
+            }
          }
       }
    });

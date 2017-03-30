@@ -4,9 +4,6 @@ app.controller("ManageCustomerController",function($scope,$route,CustomersFactor
     $scope.getCustomer = function(){
         $scope.customer = CustomersFactory.getCustomer();
     };
-    $scope.addCustomer = function(index){
-
-    }
     $scope.updateCustomer = function(){
         CustomersFactory.saveCustomer($scope.customer);
         $location.path("/customers");
@@ -16,8 +13,10 @@ app.controller("ManageCustomerController",function($scope,$route,CustomersFactor
           $scope.getCustomer();
       } else {
           $scope.addCustomer = function(customer){
-              CustomersFactory.addCustomer(customer);
-              $location.path("/customers");
+              if(!customer == null){
+                  CustomersFactory.addCustomer(customer);
+                  $location.path("/customers");
+              }
           }
       }
     });
