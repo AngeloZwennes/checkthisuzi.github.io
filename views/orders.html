@@ -1,4 +1,4 @@
-
+<label>Choose customer:</label><select ng-model="customer" ng-options="c.name for c in customers" ng-change="filterOrders()">{{customer.name}}</select>
 <table class="table table-condensed">
     <thead>
     <th>Date</th>
@@ -9,11 +9,11 @@
     <tbody ng-repeat="order in orders" on-finish-render>
     <tr data-toggle="collapse" data-target="#{{order.id}}">
         <td>{{order.date}}</td>
-        <td>{{order.subTotal}}</td>
+        <td>{{order.subTotal | currency: '€'}}</td>
         <td>{{order.orderStatus}}</td>
     </tr>
     <tr>
-        <td class="hiddenRow" colspan="3"> netjes thanks :D
+        <td class="hiddenRow" colspan="3">
             <div id="{{order.id}}" class="collapse">
                 <table>
                     <thead>

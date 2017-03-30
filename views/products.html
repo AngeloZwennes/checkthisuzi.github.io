@@ -16,7 +16,7 @@
             <td>{{product.information}}</td>
             <td>{{product.price | currency: "€"}}</td>
             <td><button class="btn btn-success" ng-click="editProduct($index)">Edit</button></td>
-            <td><a ng-click="deleteProduct($index)" class="btn btn-danger">Delete</a></td>
+            <td><a ng-click="deleteProduct($index)" class="btn btn-danger fa fa-trash-o"></a></td>
         </tr>
     </tbody>
 </table>

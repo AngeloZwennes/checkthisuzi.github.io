@@ -5,16 +5,16 @@ app.controller("CartController", function($scope,CartFactory,OrdersFactory,Custo
     $scope.customers = CustomersFactory.getAllCustomers();
     $scope.customer;
 
+    //show a modal with a select box to choose a customer
     $scope.chooseCustomer = function () {
         $("#customer-popup").modal('show');
     };
-    $scope.customerChange = function(){
-        CustomersFactory.editCustomer($scope.customer);
-    };
+    //updates the when the product quantity in the shopping cart changes
     $scope.updateCart = function(){
         CartFactory.updateCart($scope.cart);
         $scope.subTotal = CartFactory.getSubTotal();
     };
+    //called when a user places an order from the shopping cart
     $scope.placeOrder = function(){
         var today = new Date();
         var dd = today.getDate();
@@ -42,8 +42,12 @@ app.controller("CartController", function($scope,CartFactory,OrdersFactory,Custo
         CartFactory.clearCart();
         $timeout($scope.goHome(),1000);
     }
+    $scope.removeFromCart = function(index){
+        $scope.cart.splice(index,1);
+        CartFactory.updateCart($scope.cart);
+        $scope.subTotal = CartFactory.getSubTotal();
+    }
     $scope.goHome = function(){
         $location.path("/home");
     }
-
 });
