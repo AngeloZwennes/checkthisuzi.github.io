@@ -1,10 +1,12 @@
 app.controller("ManageCustomerController",function($scope,$route,CustomersFactory,$location){
    $scope.customer = null;
     $scope.adding = $route.current.$$route.addCustomer;
-
     $scope.getCustomer = function(){
         $scope.customer = CustomersFactory.getCustomer();
     };
+    $scope.addCustomer = function(index){
+
+    }
     $scope.updateCustomer = function(){
         CustomersFactory.saveCustomer($scope.customer);
         $location.path("/customers");

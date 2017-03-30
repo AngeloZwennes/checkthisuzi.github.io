@@ -1,53 +1,18 @@
-app.factory('ProductsFactory',function(){
+app.factory('ProductsFactory',function(GUIDFactory){
 
     function getAllProducts(){
         var localProducts = JSON.parse(localStorage.getItem("products"));
         //localStorage.clear();
         if(localProducts == undefined || localProducts.length < 0){
-            localProducts = [
-                {
-                    "name": "Soep",
-                    "information": "blabla",
-                    "image": "http://www.bufkes.nl/application/vanmelik-bufkes/cache/image/ratio/800/600/-Bufkes-Afbeeldingen-Producten_webshop-soepen-Soepen_2015-Tomatensoep_web.jpg",
-                    "price": 1.20
-                },
-                {
-                    "name": "Kaas",
-                    "information": "blabla",
-                    "image": "http://images.smulweb.nl/wiki/301/high_res/kaas-large.jpg",
-                    "price": 1.20
-                },
-                {
-                    "name": "Cola",
-                    "information": "Coca-Cola is de meest favoriete frisdrank van de wereld.",
-                    "image": "https://www.ah.nl.kpnis.nl/static/product/AHI_434d50323135303337_1_LowRes_JPG.JPG",
-                    "price": 1.20
-                },
-                {
-                    "name": "Fanta",
-                    "information": "blabla",
-                    "image": "https://cmgtcontent.ahold.com.kpnis.nl/cmgtcontent/media//001520700/000/001520706_002_2803_708.jpg",
-                    "price": 1.20
-                },
-                {
-                    "name": "Ijsbergsla",
-                    "information": "blabla",
-                    "image": "http://www.ingredienten.nl/images/ingredienten/ijsbergsla-large.jpg",
-                    "price": 1.20
-                },
-                {
-                    "name": "M&M",
-                    "information": "Test",
-                    "image": "https://www.ah.nl.kpnis.nl/static/product/AHI_434d50313532313339_1_LowRes_JPG.JPG",
-                    "price": 1.20
-                }
-            ];
+            localProducts = [];
             localStorage.setItem("products",JSON.stringify(localProducts));
         }
+        var products = JSON.parse(localStorage.getItem("products"));
         return JSON.parse(localStorage.getItem("products"));
     };
 
     function addProduct(product){
+        product.id = GUIDFactory.getGUID();
         var localProducts = JSON.parse(localStorage.getItem("products"));
         localProducts.push(product);
         localStorage.setItem("products",JSON.stringify(localProducts));

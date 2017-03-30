@@ -1,34 +1,10 @@
-app.factory('CustomersFactory',function(){
+app.factory('CustomersFactory',function(GUIDFactory){
 
     function getAllCustomers(){
+        //localStorage.removeItem("customers");
         var localCustomers = JSON.parse(localStorage.getItem("customers"));
         if(localCustomers == undefined || localCustomers.length < 0){
-            localCustomers = [
-                {
-                    "name": "Angelo",
-                    "email": "Angelo@email.nl",
-                    "adress": "Lommerbaan",
-                    "city": "Zoetermeer"
-                },
-                {
-                    "name": "Bram",
-                    "email": "Bram@email.nl",
-                    "adress": "Ergens",
-                    "city": "Delft"
-                },
-                {
-                    "name": "Pim",
-                    "email": "Pim@email.nl",
-                    "adress": "Ergens",
-                    "city": "Zoetermeer"
-                },
-                {
-                    "name": "Bodhie",
-                    "email": "bodhie@email.nl",
-                    "adress": "Ergens",
-                    "city": "Gouda"
-                }
-            ];
+            localCustomers = [];
             localStorage.setItem("customers",JSON.stringify(localCustomers));
         }
         return JSON.parse(localStorage.getItem("customers"));
@@ -55,6 +31,7 @@ app.factory('CustomersFactory',function(){
         return JSON.parse(localStorage.getItem("selectedCustomer"));
     }
     function addCustomer(customer){
+        customer.id = GUIDFactory.getGUID();
         var localCustomers = JSON.parse(localStorage.getItem("customers"));
         localCustomers.push(customer);
         localStorage.setItem("customers",JSON.stringify(localCustomers));
@@ -66,16 +43,8 @@ app.factory('CustomersFactory',function(){
     function editCustomer(customer){
         localStorage.setItem("selectedCustomer",JSON.stringify(customer));
     }
-    function getCartCustomer(){
-        var tempCustomer = JSON.parse(localStorage.getItem("cartCustomer"));
-        return tempCustomer;
-    }
-    function setCartCustomer(customer){
-        localStorage.setItem("cartCustomer",JSON.stringify(customer));
-    }
+
     return {
-        getCartCustomer: getCartCustomer,
-        setCartCustomer: setCartCustomer,
         getAllCustomers: getAllCustomers,
         editCustomer: editCustomer,
         getSelectedCustomerIndex: getSelectedCustomerIndex,

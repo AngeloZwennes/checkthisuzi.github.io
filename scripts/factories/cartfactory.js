@@ -9,8 +9,8 @@ app.factory('CartFactory',function(){
    };
    function addToCart(product){
        var localCart = JSON.parse(localStorage.getItem("cart"));
-       if(localCart === null){
-           localCart = [{}];
+       if(localCart === null || localCart == undefined){
+           localCart = [];
        }
        var i;
        var productExists = false;

@@ -5,6 +5,8 @@ app.controller("CustomerController", function($scope,CustomersFactory,$location)
         CustomersFactory.editCustomer(index);
         $location.path("/customers/EditCustomer");
     };
-    $scope.deleteCustomer = function(product){
+    $scope.deleteCustomer = function(index){
+        $scope.customers.splice(index,1);
+        CustomersFactory.deleteCustomer($scope.customers);
     };
 });

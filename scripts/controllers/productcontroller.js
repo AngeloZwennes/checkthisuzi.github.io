@@ -2,7 +2,6 @@ app.controller("ProductController", function($scope, ProductsFactory, $location)
     $scope.products = ProductsFactory.getAllProducts();
 
     $scope.editProduct = function(index){
-        console.log(index);
         ProductsFactory.editProduct(index);
         $location.path("/products/EditProduct");
     };

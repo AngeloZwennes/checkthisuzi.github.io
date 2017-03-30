@@ -1,4 +1,4 @@
-app.factory("OrdersFactory",function(){
+app.factory("OrdersFactory",function(GUIDFactory){
 
     function getOrders(){
         return JSON.parse(localStorage.getItem("orders"));
@@ -9,6 +9,7 @@ app.factory("OrdersFactory",function(){
         if(localOrders == null){
             localOrders = [];
         }
+        order.id = GUIDFactory.getGUID();
         localOrders.push(order);
         localStorage.setItem("orders",JSON.stringify(localOrders))
     }

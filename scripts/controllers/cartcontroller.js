@@ -1,8 +1,9 @@
 app.controller("CartController", function($scope,CartFactory,OrdersFactory,CustomersFactory,$location,$timeout) {
     $scope.cart = CartFactory.getCart();
+    console.log($scope.cart);
     $scope.subTotal = CartFactory.getSubTotal();
     $scope.customers = CustomersFactory.getAllCustomers();
-    $scope.customer = CustomersFactory.getCartCustomer();
+    $scope.customer;
 
     $scope.chooseCustomer = function () {
         $("#customer-popup").modal('show');
@@ -13,9 +14,6 @@ app.controller("CartController", function($scope,CartFactory,OrdersFactory,Custo
     $scope.updateCart = function(){
         CartFactory.updateCart($scope.cart);
         $scope.subTotal = CartFactory.getSubTotal();
-    };
-    $scope.selectCustomer = function(){
-        CustomersFactory.setCartCustomer($scope.customer);
     };
     $scope.placeOrder = function(){
         var today = new Date();
@@ -32,15 +30,13 @@ app.controller("CartController", function($scope,CartFactory,OrdersFactory,Custo
         }
 
         today = dd+'/'+mm+'/'+yyyy;
-        var newOrder = [
-            {
+        var newOrder = {
                 "products": $scope.cart,
                 "subTotal": $scope.subTotal,
                 "customer": $scope.customer,
                 "orderStatus": "Completed",
                 "date": today
-            }
-        ];
+            };
         OrdersFactory.placeOrder(newOrder);
         $("#customer-popup").modal('hide');
         CartFactory.clearCart();

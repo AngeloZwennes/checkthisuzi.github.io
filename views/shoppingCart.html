@@ -45,8 +45,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <label>Choose customer:</label>
-                <select ng-model="customer" ng-change="customerChange()">
-                    <option ng-repeat="customer in customers">{{customer.name}}</option>
+                <select ng-model="customer" ng-options="c.name for c in customers">{{customer.name}}
                 </select>
                 <button ng-click="placeOrder()">Place order</button>
             </div>
