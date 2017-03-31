@@ -8,16 +8,16 @@ app.controller("ManageCustomerController",function($scope,$route,CustomersFactor
         CustomersFactory.saveCustomer($scope.customer);
         $location.path("/customers");
     };
+    $scope.addCustomer = function(customer){
+        console.log(customer);
+        if(customer != null){
+            CustomersFactory.addCustomer(customer);
+            $location.path("/customers");
+        }
+    }
     $scope.$watch($scope.adding,function(value){
-      if(!$scope.adding){
+      if(!$scope.adding) {
           $scope.getCustomer();
-      } else {
-          $scope.addCustomer = function(customer){
-              if(!customer == null){
-                  CustomersFactory.addCustomer(customer);
-                  $location.path("/customers");
-              }
-          }
       }
     });
 });

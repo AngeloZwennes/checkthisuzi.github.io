@@ -23,6 +23,11 @@ app.directive('homepageproducts', function ($window, ProductsFactory,CartFactory
             scope.products = ProductsFactory.getAllProducts();
 
             scope.addToCart = function(product){
+                var snackbar = document.getElementById("snackbar");
+                snackbar.className="show";
+                setTimeout(function() {
+                    snackbar.className = snackbar.className.replace("show", "");
+                },1000);
               CartFactory.addToCart(product);
             };
 

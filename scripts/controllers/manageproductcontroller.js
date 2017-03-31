@@ -9,18 +9,18 @@ app.controller("ManageProductController",function($scope,$route,ProductsFactory,
       ProductsFactory.saveProduct($scope.product);
       $location.path("/products");
    }
+
+   $scope.addProduct = function(product){
+      console.log(product);
+      if(product != null){
+         console.log(product);
+         ProductsFactory.addProduct(product);
+         $location.path("/Products");
+      }
+   };
    $scope.$watch($scope.adding,function(value){
-      if(!$scope.adding){
+      if(!$scope.adding) {
          $scope.getProduct();
-      } else {
-         $scope.addProduct = function(product){
-            if(!product == null){
-               ProductsFactory.addProduct(product);
-               $location.path("/products");
-            }
-         }
       }
    });
-
-
 });

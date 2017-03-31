@@ -17,7 +17,7 @@
         <td>{{customer.email}}</td>
         <td>{{customer.adress | capitalize}}</td>
         <td>{{customer.city | capitalize}}</td>
-        <td><button class="btn btn-success" ng-click="editCustomer($index)">Edit</button></td>
+        <td><button class="btn btn-success fa fa-pencil" aria-hidden="true" ng-click="editCustomer($index)"></button></td>
         <td><a ng-click="deleteCustomer($index)" class="btn btn-danger fa fa-trash-o"></a></td>
     </tr>
     </tbody>

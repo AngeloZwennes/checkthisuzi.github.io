@@ -2,7 +2,6 @@ app.factory('ProductsFactory',function(GUIDFactory){
 
     function getAllProducts(){
         var localProducts = JSON.parse(localStorage.getItem("products"));
-        //localStorage.clear();
         if(localProducts == undefined || localProducts.length < 0){
             localProducts = [];
             localStorage.setItem("products",JSON.stringify(localProducts));
