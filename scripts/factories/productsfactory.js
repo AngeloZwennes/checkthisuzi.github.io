@@ -14,6 +14,7 @@ app.factory('ProductsFactory',function(GUIDFactory){
     function addProduct(product){
         product.id = GUIDFactory.getGUID();
         var localProducts = JSON.parse(localStorage.getItem("products"));
+        console.log(product);
         localProducts.push(product);
         localStorage.setItem("products",JSON.stringify(localProducts));
     }
