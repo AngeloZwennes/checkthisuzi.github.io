@@ -9,7 +9,6 @@ app.controller("ManageCustomerController",function($scope,$route,CustomersFactor
         $location.path("/customers");
     };
     $scope.addCustomer = function(customer){
-        console.log(customer);
         if(customer != null){
             CustomersFactory.addCustomer(customer);
             $location.path("/customers");

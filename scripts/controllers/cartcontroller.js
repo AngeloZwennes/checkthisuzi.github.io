@@ -1,6 +1,5 @@
 app.controller("CartController", function($scope,CartFactory,OrdersFactory,CustomersFactory,$location,$timeout) {
     $scope.cart = CartFactory.getCart();
-    console.log($scope.cart);
     $scope.subTotal = CartFactory.getSubTotal();
     $scope.customers = CustomersFactory.getAllCustomers();
     $scope.customer;

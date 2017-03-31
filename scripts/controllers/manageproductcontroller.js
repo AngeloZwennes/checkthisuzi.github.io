@@ -11,9 +11,7 @@ app.controller("ManageProductController",function($scope,$route,ProductsFactory,
    }
 
    $scope.addProduct = function(product){
-      console.log(product);
       if(product != null){
-         console.log(product);
          ProductsFactory.addProduct(product);
          $location.path("/Products");
       }
