@@ -9,7 +9,6 @@ app.directive('homepageproducts', function ($window, ProductsFactory,CartFactory
         '<a href="#">'+
         '<img ng-click="openLightboxModal($index)" class="img-responsive" ng-src="{{product.image}}" style="max-height: 160px; min-height:160px;width:auto">'+
         '</a>'+
-            '<div class="col-md-12"><h4>Productinformatie</h4 ></div>'+
             '<div class="col-md-12">{{product.information | slicedescription}}</div>'+
                 '</div>'+
                 '<div class="panel-footer">{{product.price | currency: "€"}}<a href="" class="btn btn-success" ng-click="addToCart(product)" style="margin-left: 20%">Add to cart</a></div>'+
@@ -23,7 +22,7 @@ app.directive('homepageproducts', function ($window, ProductsFactory,CartFactory
             scope.products = ProductsFactory.getAllProducts();
 
             scope.addToCart = function(product){
-                var snackbar = document.getElementById("snackbar");
+                var snackbar = document.getElementById("addToCartSB");
                 snackbar.className="show";
                 setTimeout(function() {
                     snackbar.className = snackbar.className.replace("show", "");

@@ -1,19 +1,19 @@
-<form>
+<form name="CustomerForm">
     <div class="form-group">
         <label>Customer name:</label>
-        <input type="text" class="form-control" placeholder="Enter customer name" ng-model="customer.name" required>
+        <input name="CustomerName" type="text" class="form-control" placeholder="Enter customer name" ng-model="customer.name" required>
     </div>
     <div class="form-group">
         <label>Customer E-mail:</label>
-        <input type="email" class="form-control" placeholder="Enter customer email" ng-model="customer.email" required>
+        <input name="CustomerEmail" type="email" class="form-control" placeholder="Enter customer email" ng-model="customer.email" required>
     </div>
     <div class="form-group">
         <label>Customer adress</label>
-        <input type="text" class="form-control" placeholder="Enter customer adress" ng-model="customer.adress" required>
+        <input name="CustomerAdress" type="text" class="form-control" placeholder="Enter customer adress" ng-model="customer.adress" required>
     </div>
     <div class="form-group">
         <label>Customer city</label>
-        <input type="text" class="form-control" placeholder="Enter customer city" ng-model="customer.city" required>
+        <input name="CustomerCity" type="text" class="form-control" placeholder="Enter customer city" ng-model="customer.city" required>
     </div>
-    <button type="submit" ng-click="addCustomer(customer)" class="btn btn-success">Submit</button>
+    <button ng-click="addCustomer(customer)" class="btn btn-success">Submit</button>
 </form>
