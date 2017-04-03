@@ -1,5 +1,5 @@
 <h1>Customers</h1>
-    <a href="#/customers/AddCustomer"  class="btn btn-primary" style="float: right">Add Customer</a>
+    <a href="#/customers/AddCustomer"  id="btnAddCustomer" class="btn btn-primary" style="float: right">Add Customer</a>
 <table class="table">
     <thead>
     <tr>
@@ -12,7 +12,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="customer in customers">
+    <tr class="customerRow" ng-repeat="customer in customers">
         <td>{{customer.name | capitalize}}</td>
         <td>{{customer.email}}</td>
         <td>{{customer.adress | capitalize}}</td>

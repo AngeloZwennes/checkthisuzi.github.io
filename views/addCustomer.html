@@ -1,19 +1,19 @@
 <form name="CustomerForm">
     <div class="form-group">
         <label>Customer name:</label>
-        <input name="CustomerName" type="text" class="form-control" placeholder="Enter customer name" ng-model="customer.name" required>
+        <input id="customerName" name="CustomerName" type="text" class="form-control" placeholder="Enter customer name" ng-model="customer.name" required>
     </div>
     <div class="form-group">
         <label>Customer E-mail:</label>
-        <input name="CustomerEmail" type="email" class="form-control" placeholder="Enter customer email" ng-model="customer.email" required>
+        <input id="customerEmail" name="CustomerEmail" type="email" class="form-control" placeholder="Enter customer email" ng-model="customer.email" required>
     </div>
     <div class="form-group">
         <label>Customer adress</label>
-        <input name="CustomerAdress" type="text" class="form-control" placeholder="Enter customer adress" ng-model="customer.adress" required>
+        <input id="customerAdress" name="CustomerAdress" type="text" class="form-control" placeholder="Enter customer adress" ng-model="customer.adress" required>
     </div>
     <div class="form-group">
         <label>Customer city</label>
-        <input name="CustomerCity" type="text" class="form-control" placeholder="Enter customer city" ng-model="customer.city" required>
+        <input id="customerCity" name="CustomerCity" type="text" class="form-control" placeholder="Enter customer city" ng-model="customer.city" required>
     </div>
-    <button ng-click="addCustomer(customer)" class="btn btn-success">Submit</button>
+    <button id="btnSubmitCustomer" ng-click="addCustomer(customer)" class="btn btn-success">Submit</button>
 </form>

@@ -11,7 +11,7 @@ app.directive('homepageproducts', function ($window, ProductsFactory,CartFactory
         '</a>'+
             '<div class="col-md-12">{{product.information | slicedescription}}</div>'+
                 '</div>'+
-                '<div class="panel-footer">{{product.price | currency: "€"}}<a href="" class="btn btn-success" ng-click="addToCart(product)" style="margin-left: 20%">Add to cart</a></div>'+
+                '<div class="panel-footer">{{product.price | currency: "€"}}<a href="" id="addToCart" class="btn btn-success" ng-click="addToCart(product)" style="margin-left: 20%">Add to cart</a></div>'+
         '</div>'+
         '</div>',
         scope: {

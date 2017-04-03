@@ -15,8 +15,8 @@ app.factory("OrdersFactory",function(GUIDFactory){
             }
         };
         return returnProducts;
-    }
-    //
+    };
+
     function placeOrder(order){
         var localOrders = JSON.parse(localStorage.getItem("orders"));
         if(localOrders == null){
@@ -25,7 +25,8 @@ app.factory("OrdersFactory",function(GUIDFactory){
         order.id = GUIDFactory.getGUID();
         localOrders.push(order);
         localStorage.setItem("orders",JSON.stringify(localOrders))
-    }
+    };
+
     return {
         getOrders: getOrders,
         getFilteredOrders: getFilteredOrders,

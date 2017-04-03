@@ -6,7 +6,6 @@ app.controller("ManageCustomerController",function($scope,$route,CustomersFactor
         $scope.customer = CustomersFactory.getCustomer();
     };
     $scope.updateCustomer = function(){
-        console.log($scope.customer);
         if($scope.customer.name != "" & $scope.customer.email != "" && $scope.customer.adress != "" && $scope.customer.city != ""){
             CustomersFactory.saveCustomer($scope.customer);
             $location.path("/customers");

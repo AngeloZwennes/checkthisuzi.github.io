@@ -13,5 +13,17 @@
     "start": "http-server ."
   },
   "author": "angolo",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "protractor": "^5.1.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/checkthisuzi/checkthisuzi.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/checkthisuzi/checkthisuzi.github.io/issues"
+  },
+  "homepage": "https://github.com/checkthisuzi/checkthisuzi.github.io#readme"
 }

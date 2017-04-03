@@ -1,6 +1,5 @@
 app.controller("ProductController", function($scope, ProductsFactory, $location) {
     $scope.products = ProductsFactory.getAllProducts();
-    console.log($scope.products);
 
     $scope.editProduct = function(index){
         ProductsFactory.editProduct(index);

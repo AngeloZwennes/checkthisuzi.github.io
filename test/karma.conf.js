@@ -17,13 +17,17 @@ module.exports = function (config) {
         files: [
             '../bower_components/angular/angular.js',
             '../scripts/vendor/jquery.js',
+            '../bower_components/angular-bootstrap/ui-bootstrap.js',
+            '../bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.js',
             '../bower_components/angular-mocks/angular-mocks.js',
             '../bower_components/angular-route/angular-route.js',
-            '../scripts/*.js',
-            '../scripts/filters/capitalize.js',
-            'specs/**/*.js',
+            '../scripts/app.js',
+            '../scripts/factories/*.js',
+            'specs/controllers/productcontroller.js',
+            'specs/factories/*.js',
             '../scripts/**/*.js',
-            'specs/*.js'
+            'specs/*.js',
+            'specs/**/*.js'
         ],
 
 
@@ -52,7 +56,7 @@ module.exports = function (config) {
 
         // level of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        logLevel: config.LOG_INFO,
+        logLevel: config.LOG_DEBUG,
 
 
         // enable / disable watching file and executing tests whenever any file changes
@@ -61,7 +65,7 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
 
 
         // Continuous Integration mode

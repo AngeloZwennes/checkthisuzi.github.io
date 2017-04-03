@@ -1,17 +1,14 @@
-var app = angular.module("MyApp", []);
-
-app.filter("capitalize",function(){
-    return function(input) {
-        return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
-    }
-});
-describe('MyApp', function() {
-    beforeEach(module('MyApp'));
+describe('Capitalize filter', function() {
+    beforeEach(module('angular-store'));
 
     describe('capitalize', function() {
-        it('capp',
+        it('should capitalize a sentence',
             inject(function(capitalizeFilter) {
-                expect(capitalizeFilter('jack')).toBe('Jack');
+                expect(capitalizeFilter('test')).toBe('Test');
+            }));
+        it('should remove the second capitalized letter',
+            inject(function(capitalizeFilter) {
+                expect(capitalizeFilter('TEst')).toBe('Test');
             }));
     });
 });

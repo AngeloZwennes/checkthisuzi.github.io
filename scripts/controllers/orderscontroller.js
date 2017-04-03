@@ -1,7 +1,7 @@
 app.controller("OrdersController",function($scope,OrdersFactory,CustomersFactory){
     $scope.orders = OrdersFactory.getOrders();
     $scope.customers = CustomersFactory.getAllCustomers();
-    $scope.customer;
+    $scope.customer = null;
 
     $scope.filterOrders = function(){
     //call everytime the select box changes to filter orders
